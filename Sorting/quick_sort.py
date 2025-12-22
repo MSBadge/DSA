@@ -36,7 +36,7 @@ def partition(num,low, high):
 
 def quick(num,low,high):
     if low < high:
-        r_index = partition(num,low,high)
+        partition(num,low,high)
         quick(num,low,high-1)
         quick(num,low+1,high)
     return num
