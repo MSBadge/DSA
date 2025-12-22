@@ -1,4 +1,4 @@
-## breack recursion in function (head recursion)
+# # breack recursion in function (head recursion)
 # count = 0
 # def fuc():
 #     global count # to call globle variable in function use globle keyword
@@ -69,7 +69,6 @@
 # def fun(n):
 #     if n == 1:
 #         return 1        # when we return it is functional
-#     print(n)
 #     return n + fun(n-1)
 # print(fun(4))
 
@@ -119,3 +118,40 @@
 #         break
 
 # print(f"After change: {a}")
+
+
+
+# # Check palindrom string Whiout recurtion
+# def check(str):
+#     l = 0
+#     r = len(str)-1
+#     while l < r:
+#         if str[l] != str[r]:
+#             return False
+#         l += 1
+#         r -= 1
+#     return True    
+# print(check("nitin"))
+
+
+
+# # Check palindrom string using recurtion
+# def check(str,left,right):
+#     if left >= right:
+#         return True
+#     if str[left] != str[right]:
+#         return False
+#     return check(str,left+1,right-1)
+# a = "nitin"
+# l = 0
+# r = len(a)-1
+# print(check(a,l,r))
+
+
+
+# # Fibonacci Number using recurtion
+# def fibonacci(num):
+#     if num == 0 or num == 1:
+#         return num
+#     return fibonacci(num-1) + fibonacci(num - 2)
+# print(fibonacci(5))
