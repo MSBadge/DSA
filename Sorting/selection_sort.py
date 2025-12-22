@@ -1,36 +1,32 @@
-# selection sort using recursion
+# Selection sort Accending order
 
-# Sellection Sort Assending order
-def selection_sort(arr):
-    n = len(arr)
+def selection(num):
+    for i in range(len(num)):
+        minindex = i
+        for j in range(i+1, len(num)):
+            if num[j] < num[minindex]:
+                minindex = j
+        num[i], num[minindex] = num[minindex], num[i]
+    return num
+
+a = [7,3,9,4,1,2,8]
+print(selection(a))
+
+
+
+
+
+# Selection sort Decending order
+
+def selection(num):
+    n = len(num)
     for i in range(n):
-        min_value = i
+        maxindex = i
         for j in range(i+1,n):
-            if arr[j] < arr[min_value]:
-                min_value = j
+            if num[j] > num[maxindex]:
+                maxindex = j
+        num[i], num[maxindex] = num[maxindex], num[i]
+    return num
 
-        arr[i], arr[min_value] = arr[min_value], arr[i]
-    return arr
-
-
-# arr = [32, 56, 44, 12, 23]
-# s=selection_sort(arr)
-# print(s)
-
-# # Sellection Sort Desending order
-# def selection_sort(arr):
-#     n = len(arr)
-#     for i in range(n):
-#         max_value = i
-#         for j in range(i+1,n):
-#             if arr[j] > arr[max_value]:
-#                 max_value = j
-
-#         arr[i], arr[max_value] = arr[max_value], arr[i]
-#     return arr
-
-
-# arr = [32, 56, 44, 12, 23]
-# s=selection_sort(arr)
-# print(s)
-
+a = [7,3,9,4,1,2,8]
+print(selection(a))

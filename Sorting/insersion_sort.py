@@ -13,5 +13,4 @@ def insersion(num):
 
 
 a = [7,8,6,4,1,2,18,9]
-# insersion(a)
 print(insersion(a))
