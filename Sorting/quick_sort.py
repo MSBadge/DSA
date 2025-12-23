@@ -20,27 +20,25 @@
 
 # 2nd technique 
 
-def partition(num,low, high):
-    pivot = num[low]
+def partision(arr,low,high):
     i, j = low, high
+    pivot = arr[low]
     while i < j:
-        while num[i] <= pivot and i <= high-1:
-            i+=1
-        while num[j] >= pivot and j >= low+1:
+        while arr[i]<=pivot and i <= high-1:
+            i +=1
+        while arr[j]>= pivot and j >= low+1:
             j-=1
         if i < j:
-            num[i], num[j] = num[j], num[i]
-    num[low], num[j] = num[j], num[low]
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[low], arr[j] = arr[j], arr[low]
     return j
-    
 
-def quick(num,low,high):
+def quick(arr,low,high):
     if low < high:
-        partition(num,low,high)
-        quick(num,low,high-1)
-        quick(num,low+1,high)
-    return num
-
+        pivot= partision(arr,low,high)
+        quick(arr,low,pivot-1)
+        quick(arr,pivot+1,high)
+    return arr
 
 a = [10, 7, 8, 9, 1, 5]
 s = quick(a,0,len(a)-1)
