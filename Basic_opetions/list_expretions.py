@@ -53,7 +53,7 @@
 
 
 
-# # remove dublicate and return unique elements
+# # remove dublicate and return total unique elements
 # def removed(arr):
 #     i = 0
 #     j = i +1

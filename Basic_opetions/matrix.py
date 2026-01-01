@@ -59,16 +59,22 @@
 
 
 
-# Print opposite diagonal triangel
+# # Print opposite diagonal triangel
+# a = [[5,7,3],[2,4,9],[8,1,6]]
+# row = len(a)
+# col = len(a[0])
 
-
-
-
-
+# for i in range(row):
+#     for j in range(col):
+#         if j == i:
+#             print("*", end=" ")
+#         else:
+#             print(a[i][j], end=" ")
+#     print()
 
 
 # # transfose of a metrix
-# matrix = [[5,9,1],[2,3,7]]
+# matrix = [[1,2,3],[4,5,6],[7,8,9]]
 # row = len(matrix)
 # colume = len(matrix[0])
 # result = [[0]*row for _ in range(colume)]
@@ -115,7 +121,7 @@
 #                 matrix[i][j] = 0
 #             print(matrix[i][j], end=" ")
 #         print()
-#     return f"{matrix[i][j]}{'\n'}"
+#     return matrix
 # print(setZero(matrix))
 
 
@@ -146,7 +152,7 @@
 #         for j in range(c):
 #             print(mat[i][j], end=" ")
 #         print()
-# matrix = [[1,2,3,4],[5,0,7,8],[7,4,0,1],[8,5,2,3]]
+# matrix = [[1,2,3,4],[5,6,7,8],[7,4,0,1],[8,5,2,3]]
 # zeros(matrix)
 
 
@@ -217,45 +223,43 @@
 
 
 
-# Spiral matrix (brute solution)
-def spiral(mat):
+# # Spiral matrix 
+# def spiral(mat):
 
-    result = []
+#     result = []
 
-    row = len(mat)
-    col = len(mat[0])
-    top, left = 0,0
-    bottom, right = row-1, col-1
-    while top <= bottom and left <= right:
-        # left to right 
-        for i in range(left, right+1):
-            result.append(mat[top][i])
-        top+=1
+#     row = len(mat)
+#     col = len(mat[0])
+#     top, left = 0,0
+#     bottom, right = row-1, col-1
+#     while top <= bottom and left <= right:
+#         # left to right 
+#         for i in range(left, right+1):
+#             result.append(mat[top][i])
+#         top+=1
 
-        # top to bottom
-        for i in range(top, bottom+1):
-            result.append(mat[i][right])
-        right-=1
+#         # top to bottom
+#         for i in range(top, bottom+1):
+#             result.append(mat[i][right])
+#         right-=1
 
-        # right to left
-        if top <= bottom:
-            for i in range(right, left-1,-1):
-                result.append(mat[bottom][i])
-            bottom-=1
+#         # right to left
+#         if top <= bottom:
+#             for i in range(right, left-1,-1):
+#                 result.append(mat[bottom][i])
+#             bottom-=1
 
-        # bottom to top
-        if left <= right:
-            for i in range(bottom, top-1,-1):
-                result.append(mat[i][left])
-            left+=1
+#         # bottom to top
+#         if left <= right:
+#             for i in range(bottom, top-1,-1):
+#                 result.append(mat[i][left])
+#             left+=1
 
-    return result
+#     return result
 
-matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
-# [1,2,3,4,8,12,11,10,9,5,6,7]
-print(spiral(matrix))
-
-
+# matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+# # [1,2,3,4,8,12,11,10,9,5,6,7]
+# print(spiral(matrix))
 
 
 
@@ -265,42 +269,44 @@ print(spiral(matrix))
 
 
 
-def spiralOrder(matrix):
-    if not matrix or not matrix[0]:
-        return []
+
+
+# def spiralOrder(matrix):
+#     if not matrix or not matrix[0]:
+#         return []
     
-    result = []
-    top, bottom = 0, len(matrix) - 1
-    left, right = 0, len(matrix[0]) - 1
+#     result = []
+#     top, bottom = 0, len(matrix) - 1
+#     left, right = 0, len(matrix[0]) - 1
     
-    while top <= bottom and left <= right:
-        # Traverse from left to right along the top row
-        for i in range(left, right + 1):
-            result.append(matrix[top][i])
-        top += 1
+#     while top <= bottom and left <= right:
+#         # Traverse from left to right along the top row
+#         for i in range(left, right + 1):
+#             result.append(matrix[top][i])
+#         top += 1
         
-        # Traverse from top to bottom along the right column
-        for i in range(top, bottom + 1):
-            result.append(matrix[i][right])
-        right -= 1
+#         # Traverse from top to bottom along the right column
+#         for i in range(top, bottom + 1):
+#             result.append(matrix[i][right])
+#         right -= 1
         
-        # Make sure we still have rows and columns to traverse
-        if top <= bottom:
-            # Traverse from right to left along the bottom row
-            for i in range(right, left - 1, -1):
-                result.append(matrix[bottom][i])
-            bottom -= 1
+#         # Make sure we still have rows and columns to traverse
+#         if top <= bottom:
+#             # Traverse from right to left along the bottom row
+#             for i in range(right, left - 1, -1):
+#                 result.append(matrix[bottom][i])
+#             bottom -= 1
         
-        if left <= right:
-            # Traverse from bottom to top along the left column
-            for i in range(bottom, top - 1, -1):
-                result.append(matrix[i][left])
-            left += 1
+#         if left <= right:
+#             # Traverse from bottom to top along the left column
+#             for i in range(bottom, top - 1, -1):
+#                 result.append(matrix[i][left])
+#             left += 1
     
-    return result
+#     return result
 
-matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
-# [1,2,3,4,8,12,11,10,9,5,6,7]
-print(spiralOrder(matrix))
+# matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+# # [1,2,3,4,8,12,11,10,9,5,6,7]
+# print(spiralOrder(matrix))
 
 

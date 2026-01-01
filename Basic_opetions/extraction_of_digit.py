@@ -100,7 +100,7 @@
 
 
 
-# friquency man or dictionary
+# # friquency map or dictionary
 # a = [4,4,7,7,8,6,2,4,7,8,0,6,3,14,7]
 # def friq(num):
 #     dic = {}

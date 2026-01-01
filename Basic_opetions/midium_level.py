@@ -253,6 +253,6 @@
 #             longest = max(longest, count)
 #     return longest
 
-# a = [1,1,1,5,99,2,101,3,98,100]
+# a = [1,2,3,4,6]
 # print(consecutive(a))
 
