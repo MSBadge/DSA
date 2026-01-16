@@ -39,9 +39,9 @@
 # print(largest([3,5,9,1,6]))
 
 
+ 
 
-
-# # check if array is sorted or not return true or false
+# # check if array is sorted or not, return true or false
 # def check(arr):
 #     for i in range(len(arr)-1):
 #         if arr[i] > arr[i+1]:
