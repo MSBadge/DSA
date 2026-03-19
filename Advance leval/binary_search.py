@@ -61,7 +61,7 @@
 #             high = mid-1
 #         else:
 #             low = mid+1
-#     return lb
+#     return f'Index value of lower bound : {lb}'
 
 # a = [1,1,1,2,3,3,4,5,6,7,7,7,8,9]
 # print(lowerBound(a,20))
@@ -87,7 +87,7 @@
 #             left = mid + 1
 #         else:
 #             right = mid - 1
-#     return upper_bound
+#     return f'Index value of lower bound : {upper_bound}'
 # a = [1,1,1,2,3,3,4,5,6,7,7,7,8,9]
 # print(upperBound(a,1))
 
