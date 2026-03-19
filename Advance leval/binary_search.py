@@ -195,7 +195,7 @@
 
 
 
-# # count occurrences of a numbar in a sorted array with duplicates
+# # count occurrences of a numbar in a sorted array with duplicates(Brute Solut)
 # def count(nums,target):
 #     n = len(nums)
 #     left = 0
@@ -219,6 +219,48 @@
 
 # a = [1,2,3,3,3,3,4,5]
 # print(count(a,3))
+
+
+
+# # count occurrences of a numbar in a sorted array with duplicates(optimal Solut)
+# a = [1,2,3,3,3,3,4,5]
+
+# def lower_bound(num, target):
+#     n = len(num)
+#     low = 0
+#     high = n-1
+#     lowerbound = -1
+#     while low <= high:
+#         mid = (low + high) // 2
+#         if num[mid] >= target:
+#             lowerbound = mid
+#             high = mid-1
+#         else:
+#             low = mid+1
+#     return lowerbound
+
+# def upper_bound(num, target):
+#     n = len(num)
+#     low = 0
+#     high = n-1
+#     upperbound = n
+#     while low <= high:
+#         mid = (low + high) // 2
+#         if num[mid] <= target:
+#             upperbound = mid
+#             low = mid+1
+#         else:
+#             high = mid-1
+            
+#     return upperbound
+
+# def count_occurance(num, target):
+#     result = upper_bound(num, target) - lower_bound(num, target) + 1
+#     return f'Count Occurance: {result}'
+
+# print(upper_bound(a,3))
+# print(lower_bound(a,3))
+# print(count_occurance(a,3))
 
 
 
