@@ -52,6 +52,8 @@ class SinglyLinkedList:
         if tem.next is not None:
             if tem.val == val:
                 self.head = tem.next
+                tem.next = None # delete through garbage collection
+                del tem         # delete using del keyword
                 return
             else:
                 found = False
@@ -64,6 +66,8 @@ class SinglyLinkedList:
                     tem = tem.next
                 if found:
                     prev.next = tem.next
+                    tem.next = None # delete through garbage collection
+                    del tem         # delete using del keyword
                     return
                 else:
                     print("Node not found")
