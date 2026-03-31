@@ -8,28 +8,29 @@ class Node:
 class DoubleLinkedList:
     def __init__(self):
         self.head = None
+        self.tail = None
     
     # insert at head
     def insert_at_head(self,val):
         new_node = Node(val)
         if not self.head:
             self.head = new_node
+            self.tail = new_node
         else:
             new_node.next = self.head
             self.head.prev = new_node
             self.head = new_node
 
-    # append element
+    # append element / insert at tail
     def append(self,val):
         new_node = Node(val)
         if not self.head:
             self.head = new_node
+            self.tail = new_node
         else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = new_node
-            new_node.prev = current
+            new_node.prev = self.tail
+            self.tail.next = new_node
+            self.tail = new_node
 
     # insert at between
     def insert_at_between(self,val,possition):
@@ -53,16 +54,22 @@ class DoubleLinkedList:
 
 
     # print list
-    def traverse(self):
+    def traverse_forword(self):
         current = self.head
-        while current.next:
-            print(current.val, end=" ")
-            current = current.next
-        print()
+        print(f"None <->", end=' ')
         while current:
-            print(current.val, end=" ")
-            current = current.prev
-        print()
+            print(f"{current.val} <->", end=" ")
+            current = current.next
+        print('None')
+
+    def traverse_backword(self):
+        currunt = self.tail
+        print(f"None <->", end=' ')
+        while currunt:
+            print(f"{currunt.val} <->", end=' ')
+            currunt = currunt.prev
+        print('None')
+        
         
     # delete head
     def delete_head(self):
@@ -73,14 +80,12 @@ class DoubleLinkedList:
             current.next = None
 
     # delete tail
-    # def delete_tail(self):
-    #     previous = None
-    #     current = self.head
-    #     while current:
-    #         if current.next == None:
-    #             previous = current.prev
-    #             current.prev = None
-    #             previous.next = None
+    def delete_tail(self):
+        current = self.tail
+        if current:
+            self.tail = current.prev
+            current.prev.next = None
+            current.prev = None
         
 
     # delete at position
@@ -100,7 +105,7 @@ class DoubleLinkedList:
                 current = current.next
             if found:
                 previous.next = current.next
-                current.next = current.prev
+                current.next.prev = current.prev
 
 
 
@@ -111,8 +116,9 @@ dll = DoubleLinkedList()
 for i in range(n):
     dll.append(a[i])
 
-dll.insert_at_between(44,5)
-dll.delete_head()
-dll.delete_at(5)
+# dll.insert_at_between(44,5)
+# dll.delete_head()
+# dll.delete_at(5)
 # dll.delete_tail()
-dll.traverse()
+# dll.traverse_forword()
+# dll.traverse_backword()

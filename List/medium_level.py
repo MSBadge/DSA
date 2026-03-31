@@ -112,6 +112,7 @@
 
 
 # # Linked List cycle 1
+# Check list are circle
 # class ListNode:
 #     def __init__(self, x):
 #         self.val = x
@@ -180,6 +181,7 @@
 
 
 # # Linked List Cycle 2
+# find connecting point of cycle
 # # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
